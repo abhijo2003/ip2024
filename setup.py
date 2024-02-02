@@ -1,5 +1,4 @@
 import os
-import sys
 from setuptools import setup
 
 # Upgrade pip
@@ -12,29 +11,34 @@ with open("README.md", encoding="utf-8") as f:
     LONG_DESCRIPTION = f.read()
 
 if __name__ == "__main__":
-    # We allow python setup.py sdist to always work to be able to create the
-    # sdist and upload it to PyPI
-    sdist_mode = len(sys.argv) == 2 and sys.argv[1] == "sdist"
+    setup(
+        name="YourPackageName",
+        version="0.1.0",
+        description="Your package description",
+        long_description=LONG_DESCRIPTION,
+        long_description_content_type="text/markdown",
+        author="Your Name",
+        author_email="your.email@example.com",
+        url="https://github.com/yourusername/yourpackage",
+        packages=["yourpackage"],
+        install_requires=[
+            "numpy",
+            "scipy",
+            "joblib",
+            "threadpoolctl",
+        ],
+        extras_require={
+            "tests": [
+                "pytest",
+                "pytest-cov",
+                "nose",
+                "coverage",
+            ]
+        },
+        classifiers=[
+            "Programming Language :: Python :: 3",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+        ],
+    )
 
-    if not sdist_mode:
-        setup(
-            description="Scikit-learn: A set of python modules for machine learning and data mining",
-            long_description=LONG_DESCRIPTION,
-            long_description_content_type="text/markdown",
-            name="scikit-learn",
-            version="0.24.3",  # Upgraded version to 0.24.3
-            install_requires=[
-                "numpy",
-                "scipy",
-                "joblib",
-                "threadpoolctl",
-            ],
-            extras_require={
-                "tests": [
-                    "pytest",
-                    "pytest-cov",
-                    "nose",
-                    "coverage",
-                ]
-            },
-        )
