@@ -22,7 +22,7 @@ if __name__ == "__main__":
         long_description=LONG_DESCRIPTION,
         long_description_content_type="text/markdown",
         name="scikit-learn",
-        version="0.24.3",  # Upgraded version to 0.24.3
+        version="23.3.2",  # Upgraded version to 0.24.3
         install_requires=[
             "numpy",
             "scipy",
