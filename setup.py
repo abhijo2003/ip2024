@@ -2,6 +2,9 @@ import os
 import sys
 from setuptools import setup
 
+# Upgrade pip
+os.system("/home/adminuser/venv/bin/python -m pip install --upgrade pip")
+
 with open("README.md", encoding="utf-8") as f:
     LONG_DESCRIPTION = f.read()
 
@@ -12,7 +15,7 @@ if __name__ == "__main__":
 
     if not sdist_mode:
         # Install scikit-learn instead of the deprecated sklearn package
-        os.system("pip install scikit-learn")
+        os.system("/home/adminuser/venv/bin/python -m pip install scikit-learn")
 
     setup(
         description="Scikit-learn: A set of python modules for machine learning and data mining",
